@@ -43,8 +43,17 @@ namespace MauiAppMinhasCompras.Helpers
 
             return _conn.QueryAsync<Produto>(sql);
         }
-        
+
+        public async Task<List<Produto>> GetProdutosAsync()
+        {
+            return await _conn.Table<Produto>().ToListAsync();
+        }
+
 
         
+
+
     }
+
+
 }

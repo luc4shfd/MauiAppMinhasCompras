@@ -26,6 +26,8 @@ namespace MauiAppMinhasCompras
 
         }
 
+        public static object Database { get; internal set; }
+
         public App()
         {
             InitializeComponent();

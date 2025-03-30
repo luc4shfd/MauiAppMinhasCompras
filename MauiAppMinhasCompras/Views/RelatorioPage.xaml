@@ -1,0 +1,31 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppMinhasCompras.Views.RelatorioPage"
+             Title="Relatório">
+    <VerticalStackLayout Padding="20">
+        <Label Text="Selecione o período:" FontAttributes="Bold" />
+
+        <Label Text="Data Inicial" />
+        <DatePicker x:Name="DataInicialPicker" />
+
+        <Label Text="Data Final" />
+        <DatePicker x:Name="DataFinalPicker" />
+
+        <Button Text="Filtrar" Clicked="OnFiltrarClicked" />
+
+        <ListView x:Name="ProdutosListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Nome}" FontAttributes="Bold" />
+                            <Label Text="{Binding Preco, StringFormat='Preço: {0:C}'}" />
+                            <Label Text="{Binding Quantidade, StringFormat='Quantidade: {0}'}" />
+                            <Label Text="{Binding DataCadastro, StringFormat='Comprado em: {0:dd/MM/yyyy}'}" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </VerticalStackLayout>
+</ContentPage>
